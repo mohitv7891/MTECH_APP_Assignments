@@ -57,9 +57,11 @@ struct node* reverse(struct node* head){
 }
 
 struct node* reverseUsingRec(struct node* head){
-
-
-
+    if(head->next==NULL) return head;
+   struct node* n=  reverseUsingRec(head->next);
+    head->next->next=head;
+    head->next= NULL;
+    return n;
 }
 int main(){
 
